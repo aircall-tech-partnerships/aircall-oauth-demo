@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- ⚠️ EXAMPLE ONLY:
+     This code is for demonstration purposes and is not production-ready. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aircall OAuth Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&family=Figtree:wght@400;500&family=JetBrains+Mono:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f6f0;
+        --ink: #012635;
+        --green-dark: #216358;
+        --green: #008f6d;
+        --border: #a4bbb7;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: 'Figtree', sans-serif;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--ink);
+        opacity: 0.7;
+      }
+
+      h1 {
+        margin: 16px 0 40px;
+        font-family: 'EB Garamond', serif;
+        font-weight: 400;
+        font-size: clamp(40px, 7vw, 72px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--green-dark);
+      }
+
+      h1 span {
+        color: var(--green);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .links a {
+        padding: 12px 16px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--white);
+        color: var(--green);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background 0.15s, color 0.15s;
+      }
+
+      .links a:hover,
+      .links a:focus-visible {
+        background: var(--green);
+        color: var(--bg);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Aircall Developers</p>
+      <h1>Build on Aircall<br /><span>with OAuth</span></h1>
+      <nav class="links">
+        <a href="https://github.com/aircall" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.youtube.com/@aircallhq" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://developer.aircall.io/" target="_blank" rel="noopener">Developer Portal</a>
+        <a href="https://developers.aircall.io/api-references/" target="_blank" rel="noopener">API Reference</a>
+      </nav>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
