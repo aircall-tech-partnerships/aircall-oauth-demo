@@ -63,20 +63,31 @@ curl -X POST http://localhost:3000/api/calls \
 
 Requires Node.js 22.13 or later (the database uses Node's built-in SQLite).
 
-1. Copy `.env.example` to `.env` and fill in your Aircall app's credentials:
+You'll need Aircall OAuth credentials (client ID and secret). If you don't have them yet, apply to the [Aircall Tech Partner program](https://aircall.io/partners/technology/signup/).
+
+> [!IMPORTANT]
+> Aircall only accepts **public HTTPS** URLs for the install URI and redirect URI. `http://localhost` won't work.
+> To run the OAuth flow locally, expose your server with a tunnel such as [ngrok](https://ngrok.com/) (`ngrok http 3000`) and use the HTTPS URL it gives you.
+
+1. Copy `.env.example` to `.env` and fill in your Aircall app's credentials. Replace `your-public-domain.com` with your public HTTPS domain (or your ngrok URL):
 
    ```
    PORT=3000
    AIRCALL_CLIENT_ID=
    AIRCALL_CLIENT_SECRET=
-   AIRCALL_REDIRECT_URI=http://localhost:3000/integrations/aircall/oauth/callback
+   AIRCALL_REDIRECT_URI=https://your-public-domain.com/integrations/aircall/oauth/callback
    ```
 
-2. Install and run:
+2. Register these URLs with Aircall for your app:
+
+   - Install URI: `https://your-public-domain.com/integrations/aircall/oauth/install`
+   - Redirect URI: `https://your-public-domain.com/integrations/aircall/oauth/callback`
+
+3. Install and run:
 
    ```bash
    npm install
    npm run dev
    ```
 
-3. Open http://localhost:3000.
+4. Open http://localhost:3000 to see the landing page locally.
